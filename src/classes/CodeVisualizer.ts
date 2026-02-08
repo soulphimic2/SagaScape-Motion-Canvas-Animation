@@ -1,4 +1,4 @@
-// src/classes/CodeVisualizer.ts - FINAL CORRECTED VERSION
+// src/classes/CodeVisualizer.ts
 import { Txt } from '@motion-canvas/2d';
 import { AppFeature } from '../types';
 
@@ -10,10 +10,11 @@ export interface ICodeSnippet {
     content?: string;
 }
 
+// CodeVisualizer class to manage and visualize code snippets and app features
 export class CodeVisualizer {
-    // Field can be readonly
     private readonly snippets: ICodeSnippet[] = [];
 
+    // Initialize with optional snippets
     constructor(snippets: ICodeSnippet[] = []) {
         this.snippets = snippets;
     }
@@ -23,7 +24,7 @@ export class CodeVisualizer {
         this.snippets.push(snippet);
     }
 
-    // Get all snippets (FIXED: Now being used)
+    // Get all snippets
     getSnippets(): ICodeSnippet[] {
         return [...this.snippets];
     }
@@ -33,7 +34,7 @@ export class CodeVisualizer {
         return this.snippets.reduce((total, snippet) => total + snippet.lines, 0);
     }
 
-    // Get TypeScript snippets count (FIXED: Now being used)
+    // Get TypeScript snippets count
     getTypeScriptCount(): number {
         return this.snippets.filter(s => s.language === 'typescript').length;
     }
@@ -43,11 +44,12 @@ export class CodeVisualizer {
         return snippet.language === 'typescript';
     }
 
-    // Create feature visualization (FIXED: Now being used)
+    // Create feature visualization
     createFeatureVisualization(feature: AppFeature): Txt {
         const status = feature.status;
         let color: string;
 
+        // Determine color based on feature status
         if (status === 'live') {
             color = '#10B981';
         } else if (status === 'development') {
@@ -56,7 +58,7 @@ export class CodeVisualizer {
             color = '#6B7280';
         }
 
-        // CORRECT: Txt constructor requires a config object
+        // Txt constructor requires a config object
         return new Txt({
             text: `${feature.name}: ${status}`,
             fill: color,
@@ -70,7 +72,7 @@ export class CodeVisualizer {
             snippet.language === 'javascript' ? '#f1e05a' :
                 snippet.language === 'python' ? '#3572A5' : '#6f42c1';
 
-        // CORRECT: Pass config object to Txt constructor
+        // Pass config object to Txt constructor
         return new Txt({
             text: `${index + 1}. ${snippet.name} (${snippet.lines} lines)`,
             fill: languageColor,
@@ -78,7 +80,7 @@ export class CodeVisualizer {
         });
     }
 
-    // Create visualizations for all snippets (FIXED: Now being used)
+    // Create visualizations for all snippets
     createVisualizations(): Txt[] {
         return this.snippets.map((snippet, index) =>
             this.createSnippetVisualization(snippet, index)
@@ -90,7 +92,7 @@ export class CodeVisualizer {
         const totalLines = this.getTotalLines();
         const tsCount = this.getTypeScriptCount();
 
-        // CORRECT: Pass config object to Txt constructor
+        // Pass config object to Txt constructor
         return new Txt({
             text: `Total: ${this.snippets.length} snippets, ${totalLines} lines (${tsCount} TypeScript)`,
             fill: '#60a5fa',

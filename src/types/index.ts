@@ -6,7 +6,7 @@ export * from './data-structures';
 import { DictionaryEntry as DE } from './data-structures';
 export { DE as DictionaryEntryModel };
 
-// Type for our SagaScape animation project
+// Type for my SagaScape animation project
 export interface SagaScapeAnimation {
     title: string;
     scenes: Array<{

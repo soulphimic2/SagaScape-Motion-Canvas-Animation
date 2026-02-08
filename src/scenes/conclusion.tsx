@@ -12,7 +12,7 @@ export default makeScene2D(function* (view) {
     const summary = createRef<Rect>();
     const thankYou = createRef<Txt>();
 
-    // Create multiple dictionary nodes - FIXED: Using correct property
+    // Create multiple dictionary nodes
     const dictNodes = [
         new DictionaryNode('cleasby-vigfusson', [-300, -100], 35207),
         new DictionaryNode('geir-zoëga', [0, -100], 28000),
@@ -67,7 +67,7 @@ export default makeScene2D(function* (view) {
 
                 <Txt
                     ref={repoLink}
-                    text="github.com/yourusername/sagascape-ts"
+                    text="github.com/soulphimic2/SagaScape-Motion-Canvas-Animation"
                     fontSize={28}
                     fill="#58a6ff"
                     y={20}
@@ -131,7 +131,7 @@ export default makeScene2D(function* (view) {
 
         const xPos = -300 + i * 300;
 
-        // FIXED: Access entries directly from constructor parameter
+        // Access entries directly from constructor parameter
         const entryCount = [35207, 28000, 42000][i]; // Direct access
 
         view.add(
@@ -329,7 +329,7 @@ export default makeScene2D(function* (view) {
         />
     );
 
-    // Use the easing animation we created
+    // Use the easing animation I created
     yield* typescriptHighlight().opacity(1, easingConfig.duration, (t) => {
         return easingConfig.easing(t);
     });

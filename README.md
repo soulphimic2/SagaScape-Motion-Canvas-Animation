@@ -10,7 +10,7 @@ The software consists of two integrated components:
 
 My purpose was to move beyond basic TypeScript usage and master advanced language features that improve code safety, maintainability, and developer experience. By combining data modeling with visual storytelling, I created a project that not only demonstrates TypeScript proficiency but also communicates complex technical concepts effectively.
 
-[Software Demo Video](https://youtube.com/your-demo-link-here) *(Replace with your actual YouTube link)*
+[Software Demo Video](https://youtube.com/your-demo-link-here) *(Replace with my actual YouTube link)*
 
 ## Development Environment
 
@@ -36,12 +36,8 @@ My purpose was to move beyond basic TypeScript usage and master advanced languag
 
 ## Future Work
 
-- **Expand Dictionary Integration**: Implement real-time loading of the complete Cleasby & Vigfusson and Geir Zoëga dictionaries with proper API endpoints
-- **Add Interactive Elements**: Convert the animation into an interactive tutorial where viewers can click through TypeScript concepts
-- **Performance Optimization**: Implement code-splitting for larger animations and optimize render performance for complex scenes
-- **Cross-Platform Export**: Extend export options to include GIF, MP4, and presentation formats like PDF/PPT
-- **Enhanced Type Safety**: Add Zod or io-ts for runtime validation that aligns with compile-time TypeScript types
-- **Testing Suite**: Implement comprehensive unit tests with Jest focusing on type guard functions and generic class behavior
+- Redo this README as it was mostly written by AI and lacks personal insights and reflections on the development process
+- Update the demo video with a more polished version that includes better animations and clearer explanations of the TypeScript features used
 
 ---
 

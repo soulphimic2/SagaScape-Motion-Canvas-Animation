@@ -1,7 +1,8 @@
-// src/classes/AnimatedDiagram.ts - COMPLETE WORKING VERSION
+// src/classes/AnimatedDiagram.ts
 import { Vector2 } from '@motion-canvas/core';
 import { IAnimatable, Vector2D } from '../types';
 
+// Base class for diagram components
 export abstract class DiagramComponent implements IAnimatable<Vector2D> {
     // All interface properties must be present
     public value: Vector2D;
@@ -11,8 +12,10 @@ export abstract class DiagramComponent implements IAnimatable<Vector2D> {
     protected color: string;
     protected size: Vector2D;
 
+    // Static property to track total components created
     static totalComponents: number = 0;
 
+    // Constructor with default values for color and size
     constructor(
         public readonly id: string,
         position: Vector2D,
@@ -31,6 +34,7 @@ export abstract class DiagramComponent implements IAnimatable<Vector2D> {
         return [...this.#position];
     }
 
+    // Sync position with interface property
     set position([x, y]: Vector2D) {
         this.#position = [x, y];
         this.value = [x, y]; // Sync interface property
@@ -49,6 +53,7 @@ export abstract class DiagramComponent implements IAnimatable<Vector2D> {
         return Promise.resolve();
     }
 
+    // Return a copy of the current value to prevent external mutation
     currentValue(): Vector2D {
         return [...this.value];
     }
@@ -61,6 +66,7 @@ export abstract class DiagramComponent implements IAnimatable<Vector2D> {
         this.position = [x, y];
     }
 
+    // New method to get bounding box
     getBounds() {
         const [x, y] = this.#position;
         const [width, height] = this.size;
@@ -77,16 +83,18 @@ export abstract class DiagramComponent implements IAnimatable<Vector2D> {
 export class DictionaryNode extends DiagramComponent {
     private entries: number;
 
+    // Constructor with additional parameter for entries
     constructor(id: string, position: Vector2D, entries: number) {
         super(id, position, '#8B5CF6', [150, 100]);
         this.entries = entries;
     }
 
+    // Implement abstract method
     render(): string {
         return `📚 ${this.id}: ${this.entries.toLocaleString()} entries`;
     }
 
-    // Additional methods
+    // Additional methods specific to DictionaryNode
     getMetrics() {
         return {
             entries: this.entries,
