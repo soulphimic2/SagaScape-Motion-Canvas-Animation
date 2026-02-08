@@ -17,7 +17,7 @@ My purpose was to move beyond basic TypeScript usage and master advanced languag
 - **Language**: TypeScript 5.x with strict type checking enabled
 - **Animation Framework**: Motion Canvas 3.x for programmatic vector animations
 - **Runtime**: Node.js 18+ with Vite for hot-reload development
-- **Editor**: Visual Studio Code with TypeScript language server
+- **Editor**: JetBrains WebStorm with TypeScript language server
 - **Version Control**: Git with GitHub for source management
 - **Build Tools**: TypeScript compiler configured for ES2022 target with CommonJS modules
 
