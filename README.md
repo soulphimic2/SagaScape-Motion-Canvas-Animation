@@ -10,7 +10,7 @@ The software consists of two integrated components:
 
 My purpose was to move beyond basic TypeScript usage and master advanced language features that improve code safety, maintainability, and developer experience. By combining data modeling with visual storytelling, I created a project that not only demonstrates TypeScript proficiency but also communicates complex technical concepts effectively.
 
-[Software Demo Video](https://youtube.com/your-demo-link-here) *(Replace with my actual YouTube link)*
+[Software Demo Video](hhttps://youtu.be/2mZ9MqIP8jU) *(Update YouTube link With Commentary Video)*
 
 ## Development Environment
 
